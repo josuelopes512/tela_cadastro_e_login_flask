@@ -14,6 +14,16 @@ class Clientes(db.Model):
     name = db.Column(db.String(1000))
     telefone = db.Column(db.String(10))
 
+    def __init__(self, username, name, email, telefone, password):
+        self.name = name
+        self.username = username
+        self.email = email
+        self.password = password
+        self.telefone = telefone
+        
+db.create_all()
+
+
 
 @app.route('/')
 def index():
